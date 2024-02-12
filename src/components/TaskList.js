@@ -26,7 +26,7 @@ const TaskList = ({ tasks, deleteTask, editTask }) => {
     return (    
         <div>
             {tasks.map((task, index) => (
-                <div key={index} className='flex justify-between mx-20 my-3 p-2 border outline-1-black'>
+                <div key={index} className={`flex justify-between mx-20 my-3 p-2 border outline-1-black ${task.status === "completed" ? "bg-green-400" : "bg-white"}`}>
                     {editingIndex === index ? (
                         <>
                             <input value={editedText} onChange={(e) => setEditedText(e.target.value)} />
